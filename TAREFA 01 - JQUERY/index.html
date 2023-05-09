@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Cantim de Minas</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="TAREFA 01 - JQUERY.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="TAREFA 01 - JQUERY.js"></script>
+    </head>
+    <body>
+        <button class="btn btn-light" type="button" data-toggle="modal" data-target="#modalExemplo" style="width: 100%; color: green; font-style: oblique;">
+            GANHE 15% DE DESCONTO NO SEU PEDIDO! CLIQUE AQUI
+        </button>
+        <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="tituloModal" aria-hidden="true">
+            <div class=" modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tituloModal" style="color: green;">APROVEITE!</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Não perca essa oportunidade! Use o cupom "MINEIRISSE15" em sua primeira compra no Cantim de Minas, pelo Ifood, e garanta 15% de desconto para pedidos acima de R$20,00.
+                        <p><a href="https://www.ifood.com.br" class="tooltip-test" title="Site Ifood" style="font-style: italic;">Clique aqui para ir á página do Ifood</a></p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" type="button" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-md bg-light navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuRestaurante" id="menuHome">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuRestaurante" aria-labelledby="menuHome">
+                <img class="navbar-brand" src="imagens/Logo.png" alt="" style="width: 70px;">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link navbar-brand" href="TAREFA 01 - JQUERY.html">Página Inicial</a>
+                    </li>
+                    <li>
+                        <a class="nav-link navbar-brand" href="#Tabela">Tabela Nutricional</a>
+                    </li>
+                
+                    <li>
+                        <a class="nav-link navbar-brand" href="https://www.ifood.com.br" target="_blank">Peça pelo Ifood</a>
+                    </li>
+                    <li>
+                        <a class="nav-link navbar-brand" href="#SobreNos">Sobre nós</a>
+                    </li>
+                    <li>
+                        <a class="nav-link navbar-brand" href="#Contato">Contato</a>
+                    </li>
+                </ul>
+                <input type="text" id="nome" placeholder="Insira o seu nome">
+                <input type="button" class="botao_login" id="mostrarNome" value="Logar">
+            </div>   
+        </nav>
+        
+
+        <div class="jumbotron text-center">
+            <h1 class="display-3">Cantim de Minas</h1>
+            <p>Delivery de comida mineira em São Paulo</p>
+            <p>Para imprimir nossas receitas tecle <kbd> Ctrl+P</kbd></p>
+            <div class="dropdown">
+                <button class="btn cor_drop dropdown-toggle" type="button" id="menuEscolha1" data-toggle="dropdown">
+                    Menu dos Pratos<span class="caret"></span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="menuEscolha1">
+                    <a class="dropdown-item" id="pgprincipais" href="#">Pratos principais</a>
+                    <a class="dropdown-item" id="pgsobremesas" href="#">Sobremesas</a>
+                    <a class="dropdown-item" id="pgbebidas" href="#">Bebidas</a>
+                    <div class="dropdown-divider"></div>
+                    <h6 class="dropdown-header">Tipo de pedido</h6>
+                    <a class="dropdown-item" href="https://www.ifood.com.br" target="_blank">Retirada</a>
+                    <a class="dropdown-item" href="https://www.ifood.com.br" target="_blank">Entrega</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid text-center" id="cardapio">
+            <div class="row" id="Pratosprincipais">
+                <div class="col-sm-3">
+                    <h3 class="font-weight-light">Pede esse trem aqui ó:</h3>
+                    <img src="imagens/feijao tropeiro.jpg" alt="Alimentação" class="img-thumbnail">
+                    <p>Especial da Chefe</p>
+                    <p>Feijão tropeiro com linguiça artesanal suína, acompanhado com arroz branco, couve refogada no alho, rodelas de laranja e suco natural ou refrigerante lata.</p>
+                    <strong>
+                        <p class="espacamento_preco">R$54,00</p>
+                    </strong>  
+                </div>
+            
+
+                <div class="col-sm-3">
+                    <h3 class="font-weight-light">Pede esse trem aqui ó:</h3>
+                    <img src="imagens/frango com quiabo.jpg" alt="Alimentação" class="img-thumbnail">
+                    <p>Pra comer rezando</p>
+                    <p>Frango cozido e refogado com quiabo, acompanhado com arroz branco, angú de fubá, feijão preto ou carioca, salada à gosto e suco natural ou refrigerante lata.<p>
+                    <strong>
+                        <p class="espacamento_preco">R$54,00</p>
+                    </strong>
+                </div>
+
+                <div class="col-sm-3">
+                    <h3 class="font-weight-light">Pede esse trem aqui ó:</h3>
+                    <img src="imagens/frango com ora.jpg" alt="Alimentação" class="img-thumbnail">
+                    <p>Ora pra nois</p>
+                    <p>Refogado de frango caipira com ora-pro-nóbis, acompanhado com arroz branco, angú de fubá e suco natural ou refrigerante lata.</p>
+                    <strong>
+                        <p class="espacamento_preco">R$54,00</p>
+                    </strong>
+                </div>
+
+                <div class="col-sm-3">
+                    <h3 class="font-weight-light">Pede esse trem aqui ó:</h3>
+                    <img src="imagens/vaca atolada.webp" alt="Alimentação" class="img-thumbnail">
+                    <p>Vaca atoladíssima</p>
+                    <p>Costela bovina cozida com mandioca, acompanhada com arroz branco, farofa com banana e suco natural ou refrigerante lata.</p>
+                    <strong>
+                        <p class="espacamento">R$54,00</p>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="row" id="Sobremesas">
+                <div class="col-sm-3">
+                    <h3 class="font-weight-light">Pede esse trem aqui ó:</h3>
+                    <img src="imagens/arroz doce.jpg" alt="Alimentação" class="img-thumbnail">
+                    <p>Mais doce que o doce de batata-doce</p>
+                    <p>Arroz doce quentinho, acompanhado com café coado, suco natural ou refrigerante lata.</p>
+                    <strong>
+                        <p class="espacamento">R$11,00</p>
+                    </strong>
+                </div>
+
+                <div class="col-sm-3">
+                    <h3 class="font-weight-light">Pede esse trem aqui ó:</h3>
+                    <img src="imagens/queijo.jpg" alt="Alimentação" class="img-thumbnail">
+                    <p>Bentinho, Capitu e Escobar</p>
+                    <p>Queijo minas da roça com goiabada cascão e ou doce de leite caseiro, acompanhado com café coado, suco natural ou refrigerante lata.</p>
+                    <strong>
+                        <p class="espacamento">R$6,00</p>
+                    </strong>
+                </div>
+
+                <div class="col-sm-3">
+                    <h3 class="font-weight-light">Pede esse trem aqui ó:</h3>
+                    <img src="imagens/rocambole.png" alt="Alimentação" class="img-thumbnail">
+                    <p>Melhor do que o de Lagoa Dourada</p>
+                    <p>Rocambole com doce de leite, acompanhado com café coado, suco natural ou refrigerante lata.</p>
+                    <strong>
+                        <p class="espacamento">R$12,00</p>
+                    </strong>
+                </div>
+
+                <div class="col-sm-3">
+                    <h3 class="font-weight-light">Pede esse trem aqui ó:</h3>
+                    <img src="imagens/pudim.jpg" alt="Alimentação" class="img-thumbnail">
+                    <p>Gostim de saudade</p>
+                    <p>Pudim de leite condensado, acompanhado com café coado, suco natural ou refrigerante lata.</p>
+                    <strong>
+                        <p class="espacamento">R$7,00</p>
+                    </strong>
+                </div>
+            </div>
+            
+            <div class="row" id="Bebidas">
+                <div class="col-sm-3">
+                    <h3 class="font-weight-light" id="Bebidas">Pede esse trem aqui ó:</h3>
+                    <img src="imagens/mate_couro.jpg" alt="Alimentação" class="img-thumbnail">
+                    <p>Bão pa tosse</p>
+                    <p>Refrigerante Mate Couro.</p>
+                    <strong>
+                        <p class="espacamento">R$6,00</p>
+                    </strong>
+                </div>
+
+                <div class="col-sm-3">
+                    <h3 class="font-weight-light">Pede esse trem aqui ó:</h3>
+                    <img src="imagens/agua.png" alt="Alimentação" class="img-thumbnail">
+                    <p> Olha, olha, olha a água mineral</p>
+                    <p>Água mineral.</p>
+                    <strong>
+                        <p class="espacamento">R$2,50</p>
+                    </strong>
+                </div>
+
+                <div class="col-sm-3">
+                    <h3 class="font-weight-light">Pede esse trem aqui ó:</h3>
+                    <img src="imagens/suco.jpg" alt="Alimentação" class="img-thumbnail">
+                    <p> Bão pa gripe</p>
+                    <p>Suco natural de laranja.</p>
+                    <strong>
+                        <p class="espacamento">R$9,00</p>
+                    </strong>
+                </div>
+
+                <div class="col-sm-3">
+                    <h3 class="font-weight-light">Pede esse trem aqui ó:</h3>
+                    <img src="imagens/guarana.jpeg" alt="Alimentação" class="img-thumbnail">
+                    <p> Faz defunto levantar</p>
+                    <p>Refrigerante Guaraná Antártica.</p>
+                    <strong>
+                        <p class="espacamento">R$6,00</p>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="table-responsive espacamento" id="Tabela">
+                    <h3 class="font-weight-light titulo"> Tabela de Informações Nutricionais</h3>
+                    <table class="table">
+                        <thead>
+                            <tr class="cor_tabela">
+                                <th>Prato</th>
+                                <th>Valor Energético</th>
+                                <th>Proteínas</th>
+                                <th>Carboidratos</th>
+                                <th>Gorduras Totais</th>
+                                <th>Fibra Alimentar</th>
+                                <th>Sódio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Feijão Tropeiro</td>
+                                <td>697kcal</td>
+                                <td>30g</td>
+                                <td>100g</td>
+                                <td>20g</td>
+                                <td>17g</td>
+                                <td>430mg</td>
+                            </tr>
+                            <tr class="cor_linha_tabela">
+                                <td>Frango com quiabo</td>
+                                <td>510kcal</td>
+                                <td>65g</td>
+                                <td>20g</td>
+                                <td>15g</td>
+                                <td>11g</td>
+                                <td>80mg</td>
+                            </tr>
+                            <tr>
+                                <td>Frango com ora-pro-nóbis</td>
+                                <td>530kcal</td>
+                                <td>63g</td>
+                                <td>30g</td>
+                                <td>13g</td>
+                                <td>15g</td>
+                                <td>210mg</td>
+                            </tr>
+                            <tr class="cor_linha_tabela">
+                                <td>Costela com mandioca</td>
+                                <td>660kcal</td>
+                                <td>47g</td>
+                                <td>90g</td>
+                                <td>19g</td>
+                                <td>15g</td>
+                                <td>370mg</td>
+                            </tr>
+                            <tr>
+                                <td>Arroz doce</td>
+                                <td>350kcal</td>
+                                <td>3,8g</td>
+                                <td>70,3g</td>
+                                <td>6g</td>
+                                <td>3,5g</td>
+                                <td>52mg</td>
+                            </tr>
+                            <tr class="cor_linha_tabela">
+                                <td>Queijo com goiabada e doce de leite</td>
+                                <td>430kcal</td>
+                                <td>4,1g</td>
+                                <td>67g</td>
+                                <td>7,4g</td>
+                                <td>3,0g</td>
+                                <td>70mg</td>
+                            </tr>
+                            <tr>
+                                <td>Refrigerante Mate Couro</td>
+                                <td>347kcal</td>
+                                <td>0g</td>
+                                <td>21g</td>
+                                <td>0g</td>
+                                <td>0g</td>
+                                <td>22mg</td>
+                            </tr>
+                        </tbody>
+                    </table>   
+                </div>
+
+                <div class="col-md-12" id="SobreNos">
+                    <h3 class="font-weight-light titulo"> Sobre nós</h3>
+                </div>
+                <div class=" col-md-6 espacamento">
+                    <img src="imagens/sobre.png" class="img-responsive rounded-circle" alt="Responsive image">
+                </div>
+                <div class=" col-md-6 espacamento_sobre">
+                    <p>Somos uma empresa brasileira e mineira, criada em 2017 após muitos planos feitos e refeitos, temos o objetivo de entregar aos nossos clientes sentimentos e sensações através dos nossos pratos, assim como as que sentimos quando comemos com a nossa família em um almoço de domingo. Nosso espaço conta com uma ótima infraestrutura, amplo estacionamento, internet sem fio, parquinho infantil, varanda panorâmica, salões espaçosos e espaços para descanso. Queremos apresentar aos paulistas as divindades da tradicional culinária mineira, que modéstia a parte, é bão demais da conta sô!   </p>
+                </div>
+            </div>
+
+        
+        
+            <div class="container-fluid" id="Contato">
+                <h3 class="font-weight-light titulo">Entre em contato</h3>
+                <form action="envio.php" class="was-validated">
+                    <div class="form-group">
+                        <label for="cliente">Nome:</label>
+                        <input type="text" class="form-control" id="cliente" name="cliente">
+                        <div class="valid-feedback">OK</div>
+                        <div class="invalid-feedback">Ops! Verifique seu nome</div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                        <div class="valid-feedback">OK</div>
+                        <div class="invalid-feedback">Ops! Verifique seu e-mail</div>
+                    </div>
+    
+                    <div class="form-group">
+                        <textarea class="form-control" name="pedido" id="" cols="30" rows="10"></textarea>
+                    </div>
+    
+                    <button type="submit" class="btn btn-success btn-lg">Enviar</button>
+                </form>
+            </div>
+        </div>
+
+        
+    </body>
+</html>
