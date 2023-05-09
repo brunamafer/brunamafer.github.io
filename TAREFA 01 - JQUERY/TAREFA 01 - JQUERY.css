@@ -45,9 +45,22 @@
     color: rgba(165, 42, 42, 0.897);
 }
 
-.espacamento_sobre{
-    font-size: 23px;
-    padding-top: 100px;
+.img_sobre{
+    float: left;
+    margin-right: 10px;
+}
+
+.sobre{
+    width: 100%;
+}
+
+.p-sobre{
+    float: right;
+    font-size: 22px;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-top: 50px;
+    padding-bottom: 150px;
 }
 
 .cor_drop{
